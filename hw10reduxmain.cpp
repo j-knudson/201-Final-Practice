@@ -4,12 +4,15 @@
 */
 
 #include <iostream>
+#include <fstream>
+#include <string> 
 #include "vee.h"
 
 using namespace std;
 
 int main()
 {
+	ifstream infile; ofstream outfile; 
 	vee v1; //create a vee object named v1
 	
 	//prompt user for Vee info

@@ -18,7 +18,7 @@ class vee
 		int topMargin; //how far down to start constructing
 		int leftMargin; //how far in to start constructing 
 		
-		static void printChars(int, char, ostream&) //this function prints char an int number of times to ostream
+		static void printChars(int, char, ostream&); //this function prints char an int number of times to ostream
 		
 	public:	
 		//constructor
@@ -38,6 +38,7 @@ class vee
 		
 		void draw (ostream&); //function to draw a Vee
 		void read (istream&); //function to read data for a Vee
+		void write (ostream&);
 
 };
 #endif
