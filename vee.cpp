@@ -26,7 +26,7 @@ void vee::write(ostream& outfile) //output raw data for a vee
 	char R_bracket = ')';
 	
 	outfile << L_bracket <<height<<" " <<width <<" "<< veeCharacter 
-	<<" " <<topMargin <<" "<<leftMargin;
+	<<" " <<topMargin <<" "<<leftMargin <<" " << R_bracket;
 }
 
 void vee::draw(ostream& outfile)  //this function will print a Vee to outstream
@@ -43,6 +43,7 @@ void vee::draw(ostream& outfile)  //this function will print a Vee to outstream
 	printChars(width, veeCharacter, outfile); //the left side of the vee
 	printChars(gap2, ' ', outfile); //middle space of the vee
 	printChars(width, veeCharacter, outfile); //the right side of the vee
+	outfile << endl; //move to next line 
 	
 	//now we need to set a loop to print the remaining lines of the vee
 	
