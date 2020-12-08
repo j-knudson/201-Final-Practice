@@ -4,3 +4,20 @@
 	Header File
 */
 
+
+#include <iostream>
+using namespace std;
+
+#ifndef ACCUMULATOR
+#define ACCUMULATOR
+
+//accumulator.h
+
+
+class accumulator
+{
+	public:
+
+		float run(istream&); //function used to calculate sum
+};
+#endif
