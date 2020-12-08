@@ -9,31 +9,29 @@ using namespace std;
 #include <string>
 #include "lab9redux.h"
 
-class accum::run(istream&)
+void accum::run(istream&)
 {
-	cout <<"Welcome to your friendly neighborhood accumulator! Please input"
-	<<"your expression, starting with operand and type in '=' when completed.\n";
+	double total=0, num=0;	// variables for the total sum, and num is variable for operand inputs
+	char oper;			// variable for operator which determines +, -, or exit
 	
-	float oper; char operand; //oper for user number input operand for user character input
-	
-	cin << oper; 
-	cin << operand;
-	float total = oper; //running total 
-	while (operand != '=') //loop until exit condition = is entered
+
+	cin >> num;
+	cin >> oper; 
+	total = num;
+	while (oper != '=')
 	{
-		cin oper;
-		switch (operand)
+		
+		cin >> num;
+		switch (oper)
 		{
-			case '+':
-				total += oper; break;
-			case '-':
-				total -= oper; break;
-			default:
-				cout <<"We have a problem\n";
+			case '+' : total += num; break;
+			case '-' : total -= num; break;
+			default : cout << " We have a problem here \n"; 
 		}
 		
-		cin <<operand;
+		cin >> oper;
 	}
+	
 	cout << "The answer is " << total << endl;
-	cout << "Tnank-you for using your friendly neighborhood accumulator!";		
+	cout << "Tnank-you for using your friendly neighborhood accumulator!";
 }

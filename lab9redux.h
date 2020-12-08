@@ -8,16 +8,16 @@
 #include <iostream>
 using namespace std;
 
-#ifndef ACCUMULATOR
-#define ACCUMULATOR
+#ifndef ACCUM
+#define ACCUM
 
 //accumulator.h
 
 
-class accumulator
+class accum
 {
 	public:
 
-		float run(istream&); //function used to calculate sum
+		void run(istream&); //function used to calculate sum
 };
 #endif
