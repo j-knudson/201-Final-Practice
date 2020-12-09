@@ -9,16 +9,16 @@
 #include "fraction.h"
 using namespace std;
 
-istream infile; ostream outfile; //globals used for fraction reading
+
 int main()
 {
 	fraction f1; //testing variable
 	cout <<"Please input a fraction and I will display it\n";
 	
-	cin >> f1.read(cin);
+	f1.readFrac(cin);
 	
 	cout <<"Here is your fraction\n";
-	f1.write(cout);
+	f1.writeFrac(cout);
 	
 	return 0;
 }
