@@ -25,4 +25,13 @@ int fractionList::display (int low, int high, ostream& outfile)
 	}
 	return count;
 }
-//int fractionList::search (int size, fraction item)
+int fractionList::search (int size, fraction item) //function to find a fraction value in the list
+{
+	int foundIndex = -1; //not found value for program is -1 
+	for (int i = 0; i < size; i++)
+	{
+		if(fracList[i].equalCheck(item))  //check list against fraction user wants to find (item)
+			foundIndex = i;
+	}
+	return foundIndex;
+}

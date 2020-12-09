@@ -43,7 +43,7 @@ int main()
 	int num_displayed = fList.display(0, num_processed, cout); //display fractions 
 	cout <<num_displayed <<" numbers were displayed from the array"<<endl;
 	
-	/*
+	
 	//creat a loop to search for a fraction
 	char searchWanted; bool choice;
 	cout <<"Would you like to search for a fraction? (y/n): ";
@@ -56,7 +56,7 @@ int main()
 		cout <<"Input the fraction you would like to find \n";
 		userFracWanted.readFrac(cin);  //call readFrac to get value from user
 	
-		int fracLocation = search(fA, num_processed, userFracWanted);
+		int fracLocation = fList.search(num_processed, userFracWanted);
 		if (fracLocation == -1)
 		{	cout <<"Your fraction was not found\n";}
 		else
@@ -69,7 +69,7 @@ int main()
 		else 
 			choice = false;
 	}
-	*/
+	
 	cout <<"Thank you goodbye\n";
 	
 	
