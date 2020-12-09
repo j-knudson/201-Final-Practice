@@ -8,6 +8,7 @@
 
 int fractionList::store(istream& infile)
 {
+	count = 0;
 	while ((count < listSize) && (fracList[count].readFrac(infile)))
 		{count++;}
 	return count;
@@ -15,9 +16,11 @@ int fractionList::store(istream& infile)
 	
 int fractionList::display (int low, int high, ostream& outfile)
 {
+	count = 0;
 	for (int i = low; i < high; i++)
 	{
 		fracList[i].writeFrac(outfile);
+		outfile << endl;
 		count++;
 	}
 	return count;

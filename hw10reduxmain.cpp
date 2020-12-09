@@ -8,15 +8,16 @@
 #include <string>
 #include <fstream>
 #include "fraction.h"
+#include "fractionList.h"
 using namespace std;
 
-int store(fraction A[], int size, istream&);   //function to store fractions into a fraction array
-int display(fraction A[], int low, int high, ostream&); //function to display a fraction array
-int search(fraction A[], int size, fraction item);
+//int store(fraction A[], int size, istream&);   //function to store fractions into a fraction array
+//int display(fraction A[], int low, int high, ostream&); //function to display a fraction array
+//int search(fraction A[], int size, fraction item);
 int main()
 {
-	const int A_SIZE = 20;
-	fraction fA[A_SIZE];
+	//const int A_SIZE = 20;
+	//fraction fA[A_SIZE];
 
 	// get filename from user
 	ifstream infile;
@@ -31,12 +32,18 @@ int main()
 		cout <<"That file could not be opened. Goodbye";
 		return 0;
 	}	
-	int num_processed = store(fA, A_SIZE, infile);
+	
+	
+	//create a fractionList object
+	fractionList fList;
+	
+	int num_processed = fList.store(infile); //call store to read fractions into our list 
 	cout <<num_processed <<" numbers were processed from the file" <<endl;
 	
-	int num_displayed = display(fA, 0, num_processed, cout);
+	int num_displayed = fList.display(0, num_processed, cout); //display fractions 
 	cout <<num_displayed <<" numbers were displayed from the array"<<endl;
 	
+	/*
 	//creat a loop to search for a fraction
 	char searchWanted; bool choice;
 	cout <<"Would you like to search for a fraction? (y/n): ";
@@ -62,14 +69,14 @@ int main()
 		else 
 			choice = false;
 	}
-	
+	*/
 	cout <<"Thank you goodbye\n";
 	
 	
 		return 0;
 }
 
-
+/*
 int store(fraction A[], int size, istream& infile)
 {
 	int count = 0;
@@ -100,3 +107,4 @@ int search (fraction A[], int size, fraction item)
 	}
 	return index;
 }
+*/
