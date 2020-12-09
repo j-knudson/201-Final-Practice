@@ -3,20 +3,20 @@
 	Implementation file for a fraction class
 	This class will create fraction objects
 */
-
 #include <iostream>
-#include <fstream>
-
 #include "fraction.h"
 
-bool fraction::writeFrac(ostream&)
+
+void fraction::writeFrac(ostream& outfile) const
 {
 	char fracBar = '/';
-	outfile << numerator <<fracBar << denominator;
+	if(outfile << numerator <<fracBar << denominator);
 }
-bool fraction::readFrac(istream&)
+bool fraction::readFrac(istream& infile)
 {
 	char fracBar;
-	infile >> numerator >> fracBar >>denominator;
+	if(infile >> numerator >> fracBar >>denominator);
+	return infile;
 }
+
 

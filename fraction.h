@@ -5,7 +5,8 @@
 */
 
 #include <iostream>
-#include <fstream>
+#include <string>
+using namespace std;
 
 #ifndef FRACTION
 #define FRACTION
@@ -14,8 +15,8 @@
 class fraction
 {
 	private: 
-		int numerator
-		int denominator
+		int numerator;
+		int denominator;
 		
 	public: 
 		//constructor
@@ -28,12 +29,14 @@ class fraction
 		
 		//setters
 		void setNumerator(int n) {numerator = n;}
-		void setDenominator(int d) {denominator = d;}
+		void setDenominator(int d)  {denominator = d;}
 		//getters
-		int getNumerator() {return numerator;}
-		int getDenominator() {return denominator;}
+		int getNumerator() const  {return numerator;}
+		int getDenominator() const {return denominator;}
 		
-		bool writeFrac(istream&); //this function will print a fraction
-		bool readFrac(ostream&);  //this function will read a fraction 
+		void writeFrac(ostream&) const; //this function will print a fraction
+		bool readFrac(istream&);  //this function will read a fraction 
+		
+
 };
 #endif
