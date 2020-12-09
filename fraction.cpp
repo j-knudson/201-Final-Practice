@@ -18,5 +18,13 @@ bool fraction::readFrac(istream& infile)
 	if(infile >> numerator >> fracBar >>denominator);
 	return infile;
 }
+bool fraction::equalCheck(const fraction right) const
+{
+	if ((denominator * right.numerator) == (numerator * right.denominator))
+		return true;
+	else	
+		return false;
+}
+
 
 

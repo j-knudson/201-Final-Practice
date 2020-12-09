@@ -15,6 +15,7 @@ int display(fraction A[], int low, int high, ostream&); //function to display a 
 int main()
 {
 	fraction f1; //testing variable
+	fraction f2; //testing variable 
 	cout <<"Please input a fraction and I will display it\n";
 	
 	f1.readFrac(cin);
@@ -23,6 +24,14 @@ int main()
 	f1.writeFrac(cout);
 	cout <<endl;
 	
+	cout <<"Input a second fraction and I will see if it is equal to your first fraction \n";
+	f2.readFrac(cin);
+	if (f2.equalCheck(f1))
+	{	f2.writeFrac(cout); cout << " is equal to "; f1.writeFrac(cout);}
+	else
+		cout <<"They are not equal \n";
+		
+	/*
 	const int A_SIZE = 20;
 	fraction fA[A_SIZE];
 
@@ -44,7 +53,7 @@ int main()
 	
 	int num_displayed = display(fA, 0, num_processed, cout);
 	cout <<num_displayed <<" numbers were displayed from the array"<<endl;
-	
+	*/
 	return 0;
 }
 

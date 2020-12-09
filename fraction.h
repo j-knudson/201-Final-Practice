@@ -36,6 +36,7 @@ class fraction
 		
 		void writeFrac(ostream&) const; //this function will print a fraction
 		bool readFrac(istream&);  //this function will read a fraction 
+		bool equalCheck(const fraction right) const;
 		
 
 };
