@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include "fraction.h"
 using namespace std;
 
@@ -18,7 +19,7 @@ class fractionList
 	private:
 		int listSize; // list size
 		int count;
-		fraction fracList[20]; //array of fractions 
+		vector <fraction> fracList; //array of fractions 
 	
 	public:
 	

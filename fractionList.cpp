@@ -9,17 +9,21 @@
 int fractionList::store(istream& infile)
 {
 	count = 0;
-	while ((count < listSize) && (fracList[count].readFrac(infile)))
-		{count++;}
+	fraction f_temp; //create a temporary fraction used to stock the fracList vector
+	while (f_temp.readFrac(infile)) //loop runs while able to add fractions 
+	{
+		fracList.push_back(f_temp);
+		count++;
+	}
 	return count;
 }
 	
 int fractionList::display (int low, int high, ostream& outfile)
 {
 	count = 0;
-	for (int i = low; i < high; i++)
+	for (unsigned int i = low; i < high; i++)
 	{
-		fracList[i].writeFrac(outfile);
+		fracList.at(i).writeFrac(outfile);
 		outfile << endl;
 		count++;
 	}
@@ -28,10 +32,10 @@ int fractionList::display (int low, int high, ostream& outfile)
 int fractionList::search (int size, fraction item) //function to find a fraction value in the list
 {
 	int foundIndex = -1; //not found value for program is -1 
-	for (int i = 0; i < size; i++)
+	for (unsigned int i = 0; i < size; i++)
 	{
-		if(fracList[i].equalCheck(item))  //check list against fraction user wants to find (item)
-			foundIndex = i;
+		if(fracList.at(i).equalCheck(item))  //check list against fraction user wants to find (item)
+			foundIndex = i+1;
 	}
 	return foundIndex;
 }
