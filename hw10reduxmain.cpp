@@ -37,21 +37,33 @@ int main()
 	int num_displayed = display(fA, 0, num_processed, cout);
 	cout <<num_displayed <<" numbers were displayed from the array"<<endl;
 	
-	//look for a fraction
-	fraction userFracWanted;
-	cout <<"Input a fraction and I will see if it is in the file \n";
-	userFracWanted.readFrac(cin);  //call readFrac to get value from user
+	//creat a loop to search for a fraction
+	char searchWanted; bool choice;
+	cout <<"Would you like to search for a fraction? (y/n): ";
+	cin >>searchWanted;
+	if ((searchWanted == 'y') || (searchWanted =='Y'))
+		choice = true;
+	while(choice)
+	{
+		fraction userFracWanted;
+		cout <<"Input the fraction you would like to find \n";
+		userFracWanted.readFrac(cin);  //call readFrac to get value from user
 	
-	int fracLocation = search(fA, num_processed, userFracWanted);
-	if (fracLocation == -1)
-	{	cout <<"Your fraction was not found\n";}
-	else
-	{userFracWanted.writeFrac(cout); cout <<"Was found in the array at index "<<fracLocation;}
+		int fracLocation = search(fA, num_processed, userFracWanted);
+		if (fracLocation == -1)
+		{	cout <<"Your fraction was not found\n";}
+		else
+		{userFracWanted.writeFrac(cout); cout <<" was found in the array at index "<<fracLocation <<endl;}
+		
+		cout <<"Would you like to search for another fraction? (y/n): \n";
+		cin >> searchWanted;
+		if ((searchWanted == 'y') || (searchWanted =='Y'))
+			choice = true;
+		else 
+			choice = false;
+	}
 	
-	
-	
-	
-	
+	cout <<"Thank you goodbye\n";
 	
 	
 		return 0;
