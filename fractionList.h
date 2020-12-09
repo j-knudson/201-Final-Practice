@@ -33,5 +33,6 @@ class fractionList
 		int store (istream& infile);
 		int display (int low, int high, ostream& outfile);
 		int search (int size, fraction item); 
+		int addFrac(fraction extraFraction);
 };
 #endif

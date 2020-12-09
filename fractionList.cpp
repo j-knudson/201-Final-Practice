@@ -20,14 +20,14 @@ int fractionList::store(istream& infile)
 	
 int fractionList::display (int low, int high, ostream& outfile)
 {
-	count = 0;
+	int display_count = 0;
 	for (unsigned int i = low; i < high; i++)
 	{
 		fracList.at(i).writeFrac(outfile);
 		outfile << endl;
-		count++;
+		display_count++;
 	}
-	return count;
+	return display_count;
 }
 int fractionList::search (int size, fraction item) //function to find a fraction value in the list
 {
@@ -38,4 +38,10 @@ int fractionList::search (int size, fraction item) //function to find a fraction
 			foundIndex = i+1;
 	}
 	return foundIndex;
+}
+int fractionList::addFrac(fraction extraFraction)
+{
+	fracList.push_back(extraFraction);
+	count++;
+	return count;
 }

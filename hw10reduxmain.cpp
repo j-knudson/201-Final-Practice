@@ -43,6 +43,13 @@ int main()
 	int num_displayed = fList.display(0, num_processed, cout); //display fractions 
 	cout <<num_displayed <<" numbers were displayed from the array"<<endl;
 	
+	cout <<"practice adding a fraction  enter a new fraction and it will be added to the list\n";
+	fraction f_temp;
+	f_temp.readFrac(cin);  //get a new fraction from user
+	num_processed = fList.addFrac(f_temp);	//add that fraction to our list
+	num_displayed = fList.display(0, num_processed, cout); //print our list again
+	cout <<num_displayed <<" numbers were displayed from the array"<<endl;	
+	
 	
 	//creat a loop to search for a fraction
 	char searchWanted; bool choice;
@@ -69,6 +76,7 @@ int main()
 		else 
 			choice = false;
 	}
+	
 	
 	cout <<"Thank you goodbye\n";
 	
