@@ -96,7 +96,46 @@ int main()
 //---------------------------------------------------
 	// this section starts code for Question 5
 //---------------------------------------------------
+
+	cout <<"----------------------------------\n";
+	cout <<"Start of output for question 5\n";
+	cout <<"----------------------------------\n";
 	
+	
+	//create a new fractions using new
+	
+	ffp1 = new fraction (3,4);  //creating fraction
+	(*ffp1).writeFrac(cout);	//calling fraction class function writeFrac to display contents
+	cout <<endl <<"ffp1 is " <<ffp1 <<" ffp1 is at: " <<&ffp1    <<endl;
+	
+	ffp1 = new fraction (4,5);
+	(*ffp1).writeFrac(cout);	//calling fraction class function writeFrac to display contents
+	cout <<endl <<"ffp1 is " <<ffp1 <<" ffp1 is at: " <<&ffp1    <<endl;
+	
+//-----------------------------------------
+//		 end of code from for Question 5
+//-----------------------------------------	
+
+
+//---------------------------------------------------
+	// this section starts code for Question 6
+//---------------------------------------------------
+	cout <<"----------------------------------\n";
+	cout <<"Start of output for question 6\n";
+	cout <<"----------------------------------\n";
+
+	cout <<"Now we will try changing the numerator and denominator\n";
+	(*ffp1).writeFrac(cout);
+	(*ffp1).setNumerator(17);
+	(*ffp1).setDenominator(13);
+	cout <<endl <<"and now after changing the values \n";
+	(*ffp1).writeFrac(cout);
+
+	cout <<endl <<"And now changing using -> \n";
+	ffp1->setNumerator(27);
+	ffp1->setDenominator(23);
+	ffp1->writeFrac(cout);
+	cout <<endl;
 	
 	return 0;
 }
