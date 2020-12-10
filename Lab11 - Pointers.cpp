@@ -34,22 +34,27 @@ int main()
 	cout <<"x2 at: " <<&x2    <<endl;
 	cout <<"c1 at: " <<&c1    <<endl;
 	cout <<"A at: " <<&A    <<endl;
-
-	
-	ip1 = &i1;  //ip1 is pointer and has value of address i1
-	fp1 = &x1; 
-	ffp1 = &f1;
-	dp1 = &x2;
-	
-	cout <<"ip1 at: " <<&ip1    <<endl;
-	cout <<"fp1 at: " <<&fp1   <<endl;
-	cout <<"ffp1 at: " <<&ffp1    <<endl;
-	cout <<"dp1 at: " <<&dp1    <<endl;
 	
 //-----------------------------------------
 //		 end of code from Prelab
 //-----------------------------------------
+
 	
+	ip1 = &i1;  //ip1 is pointer and has value of address i1
+	
+	
+	cout <<"ip1 is " <<ip1 <<" ip1 is at: " <<&ip1    <<endl;
+	cout <<"i1 is " <<i1 <<" i1 is at: " <<&i1    <<endl;
+	
+	cout <<"changing i1 to 13 through dereferencing\n";
+	*ip1 = 13;
+	cout <<"i1 is " <<i1 <<" i1 is at: " <<&i1    <<endl;
+	
+	
+	
+	cout <<"changing i2 to 23 through pointer arithmetic\n";
+	*(ip1-4) = 23;
+	cout <<"i2 is " <<i2 <<" i2 is at: " <<&i2    <<endl;
 	
 	
 	return 0;
